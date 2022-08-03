@@ -63,12 +63,11 @@ private extension CSLandingViewController {
 
 private extension CSLandingViewController {
     func populateReport() {
-        self.achievedScoreLabel.text = self.viewModel?.scoreAchieved
-        if let totalScore = self.viewModel?.totalScore {
-            self.totalScoreLabel.text = String(format: "out of \(totalScore)")
-        }
-        //Analyzing line
         DispatchQueue.main.async{
+            self.achievedScoreLabel.text = self.viewModel?.scoreAchieved
+            if let totalScore = self.viewModel?.totalScore {
+                self.totalScoreLabel.text = String(format: "out of \(totalScore)")
+            }
             self.populateRing(with: self.viewModel?.progress)
         }
     }
